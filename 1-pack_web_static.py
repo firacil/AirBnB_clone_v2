@@ -7,6 +7,7 @@ from fabric.api import local
 from time import strftime
 from datetime import date
 
+
 def do_pack():
     """function that generate arvhive from web_static"""
 
