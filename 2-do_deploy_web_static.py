@@ -17,8 +17,8 @@ def do_deploy(archive_path):
     """deploy archive file to web server"""
 
     try:
-        if not (path.exists(archive_path)):
-            return False
+            if not (path.exists(archive_path)):
+                return False
 
             # upload arc
             put(archive_path, '/tmp/')
@@ -44,13 +44,13 @@ web_static_{}/'.format(ts))
 web_static_{}/web_static'.format(ts))
 
             # delete existing link(-s)
-            run('sud rm -rf /data/web_static/current')
+            run('sudo rm -rf /data/web_static/current')
 
             # re-establish symbolic link
             run('sudo ln -s /data/web_static/releases/\
 web_static_{}/ /data/web_static/current'.format(ts))
-    except Exception:
-        return False
+    except:
+            return False
 
     # return True if success
     return True
