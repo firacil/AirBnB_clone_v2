@@ -24,6 +24,7 @@ def do_pack():
         return None
     return file
 
+
 def do_deploy(archive_path):
     """distrubetes archive to web server"""
     if path.isfile(archive_path) is False:
