@@ -24,9 +24,10 @@ def do_pack():
     if path.isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
-
+    print("Packing web_static to {}".format(file))
     if local("tar -cvzf {} web_static".format(file)).failed is True:
         return None
+    print("web_static packed: {} -> {}Bytes".format(file, path.getsize(file)))
     return file
 
 
