@@ -13,8 +13,13 @@ env.key_filename = '~/.ssh/id_rsa'
 
 def do_pack():
     """ script to fully deploy file to webserver"""
-    fd = strftime("%Y%m%d%H%M%S")
-    file = "versions/web_static_{}.tgz".format(fd)
+    fd = datetime.utcnow()
+    file = "versions/web_static_{}{}{}{}{}{}.tgz".format(fd.year,
+                                                         fd.month,
+                                                         fd.day,
+                                                         fd.hour,
+                                                         fd.minute,
+                                                         fd.second)
 
     if path.isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
