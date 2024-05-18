@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ module to build webpage with flask"""
 from flask import Flask
-
 app = Flask(__name__)
+
 
 @app.route("/", strict_slashes=False)
 def home():
