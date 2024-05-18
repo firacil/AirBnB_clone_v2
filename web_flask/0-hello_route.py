@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/", strict_slashes=False)
 def home():
+    """ attribute that serve webpage"""
     return "Hello HBNB!"
 
 
