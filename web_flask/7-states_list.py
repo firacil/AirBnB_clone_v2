@@ -8,16 +8,15 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def teardown_db(exception):
+def teardown(self):
     """Closes the storage on teardown"""
     storage.close()
 
 
 @app.route('/states_list', strict_slashes=False)
-def states_list():
+def display_states():
     """Displays a list of all State objects present in DBStorage"""
-    states = storage.all(State).values()
-    states = sorted(states, key=lambda state: state.name)
+    states = storage.all()
     return render_template('7-states_list.html', states=states)
 
 
