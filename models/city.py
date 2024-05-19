@@ -10,9 +10,6 @@ from models.base_model import BaseModel, Base
 class City(BaseModel, Base):
     """ The city class, contains state ID and name """
     __tablename__ = 'cities'
-    id = Column(String(60), primary_key=True, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, nullable=False, onupdate=datetime.utcnow)
     name = Column(String(128), nullable=False)
     state_id = Column(
         String(60),
