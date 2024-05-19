@@ -12,6 +12,7 @@ def teardown_db(exception):
     """Closes the storage on teardown"""
     storage.close()
 
+
 @app.route('/states_list', strict_slashes=False)
 def states_list():
     """Displays a list of all State objects present in DBStorage"""
